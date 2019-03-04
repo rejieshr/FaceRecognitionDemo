@@ -28,7 +28,8 @@ public class FaceRecognitionController {
 	FaceRecognitionService faceRecognitionService;
 	
 	/**
-	 * This 
+	 * This demonstrating rest API will detect and recognize whether the FaceType is present in the file passed as Request Param.
+	 * @param faceType
 	 * @param file
 	 * @param thresholdMatchPercentage
 	 * @return

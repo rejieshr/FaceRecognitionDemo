@@ -14,8 +14,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import model.FaceRecognitionResponse;
 import service.FaceRecognitionManager.FaceType;
-import util.ResourceHelper;
 
+/**
+ * This Client class will map the header and params of controller to valid types and pass teh same to the Face Recognition Manager class.
+ * @author rejieshr
+ *
+ */
 @Service
 public class FaceRecognitionService {
 	Logger logger = LogManager.getLogger(FaceRecognitionService.class);
@@ -31,6 +35,13 @@ public class FaceRecognitionService {
 		faceRecognitionManager = new FaceRecognitionManager();
 	}
 	
+	/**
+	 * This method validate the params and makes a call to the Manager to call the corresponding FaceType implementation to call the method.
+	 * @param faceType
+	 * @param matrixFile
+	 * @param strThresholdMatchPercentage
+	 * @return
+	 */
 	public ResponseEntity<Object> recognizeFaceInFile(String faceType, MultipartFile matrixFile, String strThresholdMatchPercentage) {
 		String contentType = matrixFile.getContentType().toLowerCase();
 		FaceType type = FaceRecognitionManager.getFaceType(faceType);
