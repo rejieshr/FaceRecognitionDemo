@@ -48,6 +48,7 @@ public class FaceRecognitionManager {
 	}
 	
 	public FaceRecognitionResponse recognizeCatsInFile(MultipartFile file, long thresholdMatchPercentage) {
+		//Here we call the class either the OpenCV library or other open source provider library  to run through the image and get the results
 		Position position = new Position(0, 0, 100, 100);
 		return  new FaceRecognitionResponse(position, 100);
 	}
